@@ -1,0 +1,8 @@
+[
+  {
+    "property": "zen.folder-colors.enabled",
+    "type": "checkbox",
+    "label": "Enable folder colors",
+    "defaultValue": true
+  }
+]

@@ -1,0 +1,61 @@
+/* Zen Folder Colors — pick one of 16 colors per tab folder.
+   Recolors the folder icon (through Zen's own --zen-folder-* variables),
+   the folder header row and the tabs inside.
+   Palette: edit the --zfc-* variables below, everything else adapts. */
+
+:root {
+  --zfc-red: #ef4444;
+  --zfc-orange: #f97316;
+  --zfc-amber: #f59e0b;
+  --zfc-yellow: #eab308;
+  --zfc-lime: #84cc16;
+  --zfc-green: #22c55e;
+  --zfc-teal: #14b8a6;
+  --zfc-cyan: #06b6d4;
+  --zfc-sky: #0ea5e9;
+  --zfc-blue: #3b82f6;
+  --zfc-indigo: #6366f1;
+  --zfc-violet: #8b5cf6;
+  --zfc-purple: #a855f7;
+  --zfc-pink: #ec4899;
+  --zfc-rose: #f43f5e;
+  --zfc-gray: #6b7280;
+}
+
+@media (-moz-pref("zen.folder-colors.enabled")) {
+  zen-folder[zfc-color="red"] { --zfc-current: var(--zfc-red); }
+  zen-folder[zfc-color="orange"] { --zfc-current: var(--zfc-orange); }
+  zen-folder[zfc-color="amber"] { --zfc-current: var(--zfc-amber); }
+  zen-folder[zfc-color="yellow"] { --zfc-current: var(--zfc-yellow); }
+  zen-folder[zfc-color="lime"] { --zfc-current: var(--zfc-lime); }
+  zen-folder[zfc-color="green"] { --zfc-current: var(--zfc-green); }
+  zen-folder[zfc-color="teal"] { --zfc-current: var(--zfc-teal); }
+  zen-folder[zfc-color="cyan"] { --zfc-current: var(--zfc-cyan); }
+  zen-folder[zfc-color="sky"] { --zfc-current: var(--zfc-sky); }
+  zen-folder[zfc-color="blue"] { --zfc-current: var(--zfc-blue); }
+  zen-folder[zfc-color="indigo"] { --zfc-current: var(--zfc-indigo); }
+  zen-folder[zfc-color="violet"] { --zfc-current: var(--zfc-violet); }
+  zen-folder[zfc-color="purple"] { --zfc-current: var(--zfc-purple); }
+  zen-folder[zfc-color="pink"] { --zfc-current: var(--zfc-pink); }
+  zen-folder[zfc-color="rose"] { --zfc-current: var(--zfc-rose); }
+  zen-folder[zfc-color="gray"] { --zfc-current: var(--zfc-gray); }
+
+  zen-folder[zfc-color] {
+    /* Same formulas Zen uses for the workspace-colored icon
+       (zen-folders.css), with the palette color instead of --zen-primary-color. */
+    --zen-folder-behind-bgcolor: light-dark(color-mix(in srgb, var(--zfc-current) 60%, gray), color-mix(in srgb, var(--zfc-current) 60%, #c1c1c1));
+    --zen-folder-front-bgcolor: light-dark(color-mix(in srgb, var(--zfc-current), white 70%), color-mix(in srgb, var(--zfc-current), black 40%));
+    --zen-folder-stroke: light-dark(color-mix(in srgb, var(--zfc-current) 50%, black), color-mix(in srgb, var(--zfc-current) 15%, #ebebeb));
+  }
+
+  /* Header row */
+  zen-folder[zfc-color] > .tab-group-label-container {
+    background-color: color-mix(in srgb, var(--zfc-current) 18%, transparent) !important;
+    border-radius: var(--border-radius-medium);
+  }
+
+  /* Tabs inside the folder (including the active ones of a collapsed folder) */
+  zen-folder[zfc-color] > .tab-group-container > tab:not([selected]) .tab-background {
+    background-color: color-mix(in srgb, var(--zfc-current) 10%, transparent) !important;
+  }
+}
