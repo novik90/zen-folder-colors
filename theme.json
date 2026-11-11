@@ -15,6 +15,7 @@
         "chrome": "userChrome.css"
     },
     "readme": "https://raw.githubusercontent.com/novik90/zen-folder-colors/main/README.md",
+    "image": "https://raw.githubusercontent.com/novik90/zen-folder-colors/main/image.png",
     "author": "novik90",
     "version": "1.0.0",
     "tags": [
@@ -25,5 +26,6 @@
     ],
     "createdAt": "2026-11-11",
     "updatedAt": "2026-11-11",
+    "ai": "yes",
     "fork": ["zen"]
 }

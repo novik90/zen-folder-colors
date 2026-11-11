@@ -4,6 +4,8 @@ A [Sine](https://github.com/CosmoCreeper/Sine) mod for [Zen Browser](https://zen
 that lets you pick one of **16 colors** for any tab folder. The color tints the
 folder icon, the folder header row and the tabs inside the folder.
 
+![Zen Folder Colors in action](image.png)
+
 ## Requirements
 
 - Zen Browser
