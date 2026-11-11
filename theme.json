@@ -1,0 +1,29 @@
+{
+    "id": "zen-folder-colors",
+    "name": "Zen Folder Colors",
+    "description": "Pick one of 16 colors for any tab folder: the folder icon, header row and tabs inside get tinted.",
+    "scripts": {
+        "folder-colors.uc.js": {
+            "include": [
+                "chrome://browser/content/browser.xhtml"
+            ]
+        }
+    },
+    "homepage": "https://github.com/novik90/zen-folder-colors",
+    "preferences": "https://raw.githubusercontent.com/novik90/zen-folder-colors/main/preferences.json",
+    "style": {
+        "chrome": "userChrome.css"
+    },
+    "readme": "https://raw.githubusercontent.com/novik90/zen-folder-colors/main/README.md",
+    "author": "novik90",
+    "version": "1.0.0",
+    "tags": [
+        "Zen Browser",
+        "Vertical Tabs",
+        "Tab Folders",
+        "Colors"
+    ],
+    "createdAt": "2026-11-11",
+    "updatedAt": "2026-11-11",
+    "fork": ["zen"]
+}
