@@ -140,19 +140,20 @@
       item.setAttribute("label", color[0].toUpperCase() + color.slice(1));
       item.setAttribute("image", swatchImage(color));
       item.setAttribute("class", "menuitem-iconic");
-      item.dataset.zfcColor = color;
+      item.setAttribute("data-zfc-color", color);
       popup.appendChild(item);
     }
     popup.appendChild(document.createXULElement("menuseparator"));
     const reset = document.createXULElement("menuitem");
     reset.setAttribute("label", "Default (workspace color)");
-    reset.dataset.zfcColor = "";
+    reset.setAttribute("data-zfc-color", "");
     popup.appendChild(reset);
 
     popup.addEventListener("command", event => {
+      if (event.target.localName !== "menuitem") return;
       const folder = resolveFolder(parentPopup);
       if (!folder) return;
-      setColor(folder, event.target.dataset.zfcColor || null);
+      setColor(folder, event.target.getAttribute("data-zfc-color") || null);
     });
     popup.addEventListener("popupshowing", () => {
       const folder = resolveFolder(parentPopup);
@@ -161,7 +162,7 @@
         if (item.getAttribute("type") === "radio") {
           item.setAttribute(
             "checked",
-            item.dataset.zfcColor === current ? "true" : "false"
+            item.getAttribute("data-zfc-color") === current ? "true" : "false"
           );
         }
       }
